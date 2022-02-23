@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 import type { Session as AuthSession } from "@supabase/gotrue-js";
 import AuthForm from "../components/AuthForm";
-import Authenticated from "../components/Authenticated";
 import Layout from "../components/Layout";
+import FriendsStays from "../components/FriendsStays";
 
-export default function Home() {
+export default function Friends() {
   const [loading, setLoading] = useState(true);
   const [session, setSession] = useState<AuthSession | null>(null);
 
@@ -35,7 +35,7 @@ export default function Home() {
   } else {
     return (
       <Layout>
-        <Authenticated />
+        <FriendsStays />
       </Layout>
     );
   }
